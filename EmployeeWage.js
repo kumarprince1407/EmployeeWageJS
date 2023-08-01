@@ -5,36 +5,41 @@ const IS_FULL_TIME = 2;
 const PART_TIME_HOURS = 4;
 const FULL_TIME_HOURS = 8;
 const WAGE_PER_HOUR = 20;
-//UC3
-//let empHrs = 0;
-let empCheck = Math.floor(Math.random() * 10) % 3;
+
 function getWorkingHours(empCheck) {
   switch (empCheck) {
     case IS_PART_TIME:
-      // console.log("Employee is present part-time. ");
       return PART_TIME_HOURS;
 
     case IS_FULL_TIME:
-      //console.log("Employee is present full-time. ");
       return FULL_TIME_HOURS;
 
     default:
-      //console.log("Employee is absent.");
       return 0;
   }
 }
 
-// empHrs = getWorkingHours(empCheck);
-// let empWage = empHrs * WAGE_PER_HOUR;
-// console.log("Employee wage:" + empWage);
-
-//UC 4
-//Calculating Wages for a Month assuming 20 Working Days in a Month
+//UC5
+//Calculate Wages till a condition of total working hours of 160 or max days of 20 is reached for a month
+const TOTAL_WORKING_HOURS = 160;
 const MONTLY_WORKING_DAYS = 20;
-let empHrs = 0;
-for (let day = 0; day < MONTLY_WORKING_DAYS; day++) {
+let totalEmpHours = 0;
+let totalEmpDays = 1;
+while (
+  totalEmpHours <= TOTAL_WORKING_HOURS &&
+  totalEmpDays < MONTLY_WORKING_DAYS
+) {
+  totalEmpDays++;
   let empCheck = Math.floor(Math.random() * 10) % 3;
-  empHrs += getWorkingHours(empCheck);
+  totalEmpHours += getWorkingHours(empCheck);
 }
-let empWage = empHrs * WAGE_PER_HOUR;
-console.log("Total working hours: " + empHrs + " | Employee wage: " + empWage);
+
+let empWage = totalEmpHours * WAGE_PER_HOUR;
+console.log(
+  "Total working days: " +
+    totalEmpDays +
+    " | Total working hours :" +
+    totalEmpHours +
+    " | Monthly employee wage: " +
+    empWage
+);
