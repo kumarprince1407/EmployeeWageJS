@@ -20,12 +20,29 @@ function getWorkingHours(emp_check) {
 // console.log("Employee wage: " + empWage);
 //UC 4
 //Calculating Wages for a Month assuming 20 Working Days in a Month
-const MONTHLY_WORKING_DAYS = 20;
-for (let day = 1; day <= MONTHLY_WORKING_DAYS; day++) {
-  //let emp_check = Math.floor(Math.random() * 10) % 3;
-  emp_hours = getWorkingHours(emp_check);
-}
-let empWage = emp_hours * 20;
-console.log("Total working hours: " + emp_hours + " Monthly wage: " + empWage);
+// const MONTHLY_WORKING_DAYS = 20;
+// for (let day = 1; day <= MONTHLY_WORKING_DAYS; day++) {
+//   //let emp_check = Math.floor(Math.random() * 10) % 3;
+//   emp_hours = getWorkingHours(emp_check);
+// }
+// let empWage = emp_hours * 20;
+// console.log("Total working hours: " + emp_hours + " Monthly wage: " + empWage);
 
 //For loop
+// let dogs = ["Bulldog", "Beagle", "Labrador"];
+// allDogs = "";
+// for (let dog of dogs) {
+//   allDogs += dog + " ";
+// }
+// console.log("NEW: " + allDogs);
+// for (let i = 0; i < dogs.length; i++) {
+//   console.log(dogs[i]);
+// }
+let origDogs = ["Bulldog", "Beagle", "Labrador"];
+let cats = new Array("American Curl", "Bengal");
+console.log(cats);
+let slicedDogs = origDogs.slice(1, 3);
+console.log(slicedDogs);
+let dogs = origDogs.slice(0);
+let pushDog = dogs.push("Golden Retriever");
+console.log(dogs); //[ 'Bulldog', 'Beagle', 'Labrador', 'Golden Retriever' ]

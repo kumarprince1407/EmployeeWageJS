@@ -25,13 +25,22 @@ const TOTAL_WORKING_HOURS = 160;
 const MONTLY_WORKING_DAYS = 20;
 let totalEmpHours = 0;
 let totalEmpDays = 1;
+
+//UC 6- Store the Daily Wage along with the Total Wage - Save in an Array the Daily Wage
+function calcDailyWage(emp_hours) {
+  return emp_hours * WAGE_PER_HOUR;
+}
+let empDailyWageArr = new Array();
+
 while (
   totalEmpHours <= TOTAL_WORKING_HOURS &&
   totalEmpDays < MONTLY_WORKING_DAYS
 ) {
   totalEmpDays++;
   let empCheck = Math.floor(Math.random() * 10) % 3;
+  let emp_hours = getWorkingHours(empCheck);
   totalEmpHours += getWorkingHours(empCheck);
+  empDailyWageArr.push(calcDailyWage(emp_hours));
 }
 
 let empWage = totalEmpHours * WAGE_PER_HOUR;
@@ -43,3 +52,4 @@ console.log(
     " | Monthly employee wage: " +
     empWage
 );
+//console.log(empDailyWageArr);// Just for reference: prints the daily wage array
